@@ -6,3 +6,4 @@ __pycache__/
 !02_proyecto/data/processed/.gitkeep
 .streamlit/secrets.toml
 *.zip
+.vscode/
