@@ -1,41 +1,62 @@
 import plotly.graph_objects as go
 import plotly.io as pio
 
-HOJA = "#1F4D3A"
-CEREZA = "#A4243B"
-SECADO = "#C08A2E"
-BROTE = "#7A8B3C"
-GRANO = "#2B211C"
-NIEBLA = "#5B6C8F"
-FONDO = "#F7F8F4"
-LINEA = "#DCE2D5"
+AZUL = "#245E40"
+AZUL_MEDIO = "#2F6DB5"
+AZUL_CLARO = "#9DB7DA"
+AMBAR = "#C77D1A"
+VERDE = "#1F8A84"
+GRIS = "#7A8699"
+TINTA = "#1A2433"
+TENUE = "#5A6577"
+LINEA = "#D9E0EA"
+FONDO = "#F4F6FA"
 
 SEGMENTOS = {
-    "Motores de crecimiento": HOJA,
-    "Maduros estancados": SECADO,
-    "Emergentes volátiles": CEREZA,
-    "Marginales": "#9AA393",
+    "Motores de crecimiento": AZUL,
+    "Maduros estancados": GRIS,
+    "Emergentes volátiles": AMBAR,
+    "Marginales": "#C3CAD5",
 }
 
 CSS = f"""
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif&display=swap');
-.stApp, .stApp p, .stApp li, .stApp label, .stApp input, .stApp textarea, .stApp button {{
-    font-family: 'Instrument Sans', system-ui, sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap');
+.stApp, .stApp p, .stApp li, .stApp label, .stApp input, .stApp textarea, .stApp button, .stApp h1, .stApp h2, .stApp h3 {{
+    font-family: 'IBM Plex Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
 }}
-.stApp h1, .stApp h2, .stApp h3 {{
-    font-family: 'Instrument Serif', Georgia, serif;
-    font-weight: 400;
-    color: {GRANO};
-    letter-spacing: -0.01em;
+.stApp h1 {{ font-size: 1.8rem; font-weight: 600; color: {AZUL}; letter-spacing: -0.005em; padding-bottom: 0.2rem; }}
+.stApp h2, .stApp h3 {{ font-size: 1.1rem; font-weight: 600; color: {AZUL_MEDIO}; }}
+.subtitulo {{ color: {TENUE}; font-size: 1rem; max-width: 70ch; margin-bottom: 1.2rem; }}
+
+[data-testid="stSidebar"] {{ background: {AZUL}; }}
+[data-testid="stSidebar"] p, [data-testid="stSidebar"] li {{ color: #D6E0EE; }}
+[data-testid="stSidebar"] h1, [data-testid="stSidebar"] h2, [data-testid="stSidebar"] h3 {{ color: #FFFFFF; }}
+[data-testid="stSidebar"] .stButton button {{ background: transparent; color: #FFFFFF; border: 1px solid rgba(255,255,255,0.45); }}
+[data-testid="stSidebar"] .stButton button:hover {{ background: rgba(255,255,255,0.1); border-color: #FFFFFF; color: #FFFFFF; }}
+[data-testid="stSidebar"] .stButton button p {{ color: #FFFFFF; }}
+
+.kpis {{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    background: #FFFFFF;
+    border: 1px solid {LINEA};
+    border-top: 3px solid {AZUL};
+    border-radius: 6px;
+    margin-bottom: 1.5rem;
 }}
-.stApp h1 {{ font-size: 3rem; line-height: 1.05; max-width: 18ch; }}
-.bajada {{ font-size: 1.1rem; max-width: 62ch; color: #4A403A; line-height: 1.55; }}
-.cifra {{ border-left: 3px solid {HOJA}; padding: 0.2rem 0 0.2rem 0.9rem; }}
-.cifra b {{ display: block; font-family: 'Instrument Serif', Georgia, serif; font-size: 2.2rem; font-weight: 400; color: {GRANO}; line-height: 1.1; }}
-.cifra span {{ font-size: 0.92rem; color: #5E554F; }}
-[data-testid="stChatMessage"] {{ background: #FFFFFF; border: 1px solid {LINEA}; border-radius: 10px; }}
-[data-testid="stTabs"] button p {{ font-size: 1rem; }}
+.kpi {{ padding: 0.9rem 1.1rem; border-left: 1px solid {LINEA}; }}
+.kpi:first-child {{ border-left: none; }}
+.kpi span {{ display: block; font-size: 0.82rem; color: {TENUE}; }}
+.kpi b {{ display: block; font-size: 1.45rem; font-weight: 600; color: {AZUL}; font-variant-numeric: tabular-nums; margin-top: 0.15rem; }}
+
+[data-testid="stChatMessage"] {{ background: #FFFFFF; border: 1px solid {LINEA}; border-radius: 6px; padding: 1rem; }}
+.stMain .stButton button {{ background: #FFFFFF; border: 1px solid {LINEA}; border-radius: 6px; text-align: left; justify-content: flex-start; min-height: 3.2rem; }}
+.stMain .stButton button:hover {{ border-color: {AZUL_MEDIO}; color: {AZUL}; }}
+.stButton button p {{ white-space: normal; overflow: visible; text-overflow: clip; }}
+[data-testid="stTabs"] button p {{ font-size: 0.95rem; font-weight: 500; }}
+[data-testid="stTabs"] button[aria-selected="true"] p {{ color: {AZUL}; font-weight: 600; }}
+[data-testid="stExpander"] {{ background: #FFFFFF; }}
 </style>
 """
 
@@ -43,20 +64,21 @@ CSS = f"""
 def registrar_tema():
     pio.templates["garden"] = go.layout.Template(
         layout=dict(
-            font=dict(family="Instrument Sans, system-ui, sans-serif", color=GRANO, size=13),
-            title=dict(font=dict(family="Instrument Serif, Georgia, serif", size=22, color=GRANO), x=0, xanchor="left"),
-            colorway=[HOJA, CEREZA, SECADO, BROTE, NIEBLA, GRANO],
+            font=dict(family="IBM Plex Sans, system-ui, sans-serif", color=TINTA, size=13),
+            title=dict(font=dict(family="IBM Plex Sans, system-ui, sans-serif", size=16, color=AZUL), x=0, xanchor="left"),
+            colorway=[AZUL, AZUL_MEDIO, AMBAR, GRIS, VERDE, AZUL_CLARO],
             paper_bgcolor="rgba(0,0,0,0)",
             plot_bgcolor="rgba(0,0,0,0)",
-            xaxis=dict(gridcolor=LINEA, zeroline=False, linecolor=LINEA),
-            yaxis=dict(gridcolor=LINEA, zeroline=False, linecolor=LINEA),
+            xaxis=dict(gridcolor="#E3E8F0", zeroline=False, linecolor=LINEA),
+            yaxis=dict(gridcolor="#E3E8F0", zeroline=False, linecolor=LINEA),
             legend=dict(orientation="h", y=-0.2, title_text=""),
-            margin=dict(l=10, r=10, t=60, b=10),
-            hoverlabel=dict(font_family="Instrument Sans, system-ui, sans-serif"),
+            margin=dict(l=10, r=10, t=50, b=10),
+            hoverlabel=dict(font_family="IBM Plex Sans, system-ui, sans-serif"),
         )
     )
     pio.templates.default = "plotly_white+garden"
 
 
-def cifra(valor, texto):
-    return f'<div class="cifra"><b>{valor}</b><span>{texto}</span></div>'
+def kpis(items):
+    celdas = "".join(f'<div class="kpi"><span>{etiqueta}</span><b>{valor}</b></div>' for etiqueta, valor in items)
+    return f'<div class="kpis">{celdas}</div>'

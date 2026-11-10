@@ -12,6 +12,8 @@ st.set_page_config(page_title="Garden Coffee | Agente analítico", page_icon="�
 estilo.registrar_tema()
 st.markdown(estilo.CSS, unsafe_allow_html=True)
 
+AVATARES = {"user": ":material/person:", "assistant": ":material/query_stats:"}
+
 SUGERENCIAS = [
     "¿Qué mercados conviene priorizar y por qué?",
     "Muéstrame la evolución del consumo de Vietnam",
@@ -56,21 +58,22 @@ def encabezado():
     futuro = consulta("SELECT consumo_kg FROM pronosticos WHERE country = 'TOTAL' AND year = 2024")["consumo_kg"].iloc[0]
     asia = region[region["region"] == "Asia y Oceanía"].set_index("year")["kg"]
 
-    st.title(f"Los países productores ya consumen {miles(total[2019] / 1e6)} millones de kg de su propio café")
+    st.title("Garden Coffee | Análisis de demanda")
     st.markdown(
-        '<p class="bajada">Treinta años de consumo doméstico en 55 países, analizados para encontrar dónde crece la demanda. '
-        "Pregúntale al agente lo que quieras sobre los datos o explora el panorama, los pronósticos y los mercados.</p>",
+        '<p class="subtitulo">Consumo doméstico de café en 55 países productores entre 1990 y 2019, con pronóstico a 2024. '
+        "Pregúntale al agente o revisa el panorama, los pronósticos y los mercados.</p>",
         unsafe_allow_html=True,
     )
-    cifras = [
-        (f"×{miles(total[2019] / total[1990], 1)}", "creció el consumo desde 1990"),
-        (f"{miles(brasil / total[2019] * 100)} %", "del consumo está en Brasil"),
-        (f"{miles(asia[2019] / total[2019] * 100)} %", f"lo consume Asia, frente al {miles(asia[1990] / total[1990] * 100)} % de 1990"),
-        (f"{miles(((futuro / total[2019]) ** (1 / 5) - 1) * 100, 1)} %", "de crecimiento anual esperado hasta 2024"),
-    ]
-    for col, (valor, texto) in zip(st.columns(4), cifras):
-        col.markdown(estilo.cifra(valor, texto), unsafe_allow_html=True)
-    st.write("")
+    st.markdown(
+        estilo.kpis([
+            ("Consumo 2019", f"{miles(total[2019] / 1e6)} M kg"),
+            ("Crecimiento desde 1990", f"×{miles(total[2019] / total[1990], 1)}"),
+            ("Participación de Brasil", f"{miles(brasil / total[2019] * 100)} %"),
+            ("Participación de Asia", f"{miles(asia[2019] / total[2019] * 100)} %"),
+            ("Crecimiento anual esperado a 2024", f"{miles(((futuro / total[2019]) ** (1 / 5) - 1) * 100, 1)} %"),
+        ]),
+        unsafe_allow_html=True,
+    )
 
 
 def contenido(item, indice):
@@ -100,7 +103,7 @@ def pestana_agente():
         st.rerun()
 
     for indice, item in enumerate(st.session_state.historial):
-        with st.chat_message(item["rol"]):
+        with st.chat_message(item["rol"], avatar=AVATARES[item["rol"]]):
             contenido(item, indice)
 
     sugerida = None
@@ -116,11 +119,11 @@ def pestana_agente():
         return
 
     st.session_state.historial.append({"rol": "user", "texto": pregunta})
-    with st.chat_message("user"):
+    with st.chat_message("user", avatar=AVATARES["user"]):
         st.markdown(pregunta)
     agente = st.session_state.agente
     previo = list(agente.mensajes)
-    with st.chat_message("assistant"):
+    with st.chat_message("assistant", avatar=AVATARES["assistant"]):
         with st.spinner("Consultando los datos"):
             try:
                 r = agente.preguntar(pregunta)
@@ -167,11 +170,11 @@ def pestana_pronosticos():
 
     fig = go.Figure()
     fig.add_scatter(x=fut["year"], y=m("rango95_alto_kg"), line=dict(width=0), showlegend=False, hoverinfo="skip")
-    fig.add_scatter(x=fut["year"], y=m("rango95_bajo_kg"), line=dict(width=0), fill="tonexty", fillcolor="rgba(31,77,58,0.12)", name="Rango 95 %")
+    fig.add_scatter(x=fut["year"], y=m("rango95_bajo_kg"), line=dict(width=0), fill="tonexty", fillcolor="rgba(11,46,89,0.10)", name="Rango 95 %")
     fig.add_scatter(x=fut["year"], y=m("rango80_alto_kg"), line=dict(width=0), showlegend=False, hoverinfo="skip")
-    fig.add_scatter(x=fut["year"], y=m("rango80_bajo_kg"), line=dict(width=0), fill="tonexty", fillcolor="rgba(31,77,58,0.28)", name="Rango 80 %")
-    fig.add_scatter(x=hist["year"], y=hist["v"], mode="lines", name="Histórico", line=dict(color=estilo.GRANO))
-    fig.add_scatter(x=fut["year"], y=m("consumo_kg"), mode="lines+markers", name="Pronóstico", line=dict(color=estilo.HOJA, dash="dash"))
+    fig.add_scatter(x=fut["year"], y=m("rango80_bajo_kg"), line=dict(width=0), fill="tonexty", fillcolor="rgba(11,46,89,0.22)", name="Rango 80 %")
+    fig.add_scatter(x=hist["year"], y=hist["v"], mode="lines", name="Histórico", line=dict(color=estilo.TINTA))
+    fig.add_scatter(x=fut["year"], y=m("consumo_kg"), mode="lines+markers", name="Pronóstico", line=dict(color=estilo.AZUL, dash="dash"))
     fig.update_layout(title=f"{eleccion}: histórico y pronóstico 2020–2024", xaxis_title="Año", yaxis_title="Millones de kg")
     st.plotly_chart(fig, width="stretch")
 
@@ -231,7 +234,7 @@ def pestana_mercados():
 
 def barra_lateral():
     with st.sidebar:
-        st.markdown("### Sobre estos datos")
+        st.subheader("Sobre estos datos")
         st.markdown(
             "Consumo doméstico de café en 55 países productores, de 1990 a 2019, en kilogramos. "
             "Los pronósticos llegan a 2024 y no incluyen precios, porque el dataset no los tiene."
