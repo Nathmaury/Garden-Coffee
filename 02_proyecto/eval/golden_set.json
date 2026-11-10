@@ -1,0 +1,20 @@
+[
+  {"id": "C01", "categoria": "consulta", "pregunta": "¿Cuál fue el consumo total de café en 2019?", "sql": "SELECT SUM(consumption_kg) / 1e6 FROM consumo WHERE year = 2019 AND reported"},
+  {"id": "C02", "categoria": "consulta", "pregunta": "¿Cuánto café consumió Brasil en 2019?", "sql": "SELECT consumption_kg / 1e6 FROM consumo WHERE country = 'Brazil' AND year = 2019"},
+  {"id": "C03", "categoria": "consulta", "pregunta": "¿Qué país tuvo el mayor consumo en 2010?", "contiene": ["Brasil"]},
+  {"id": "C04", "categoria": "consulta", "pregunta": "¿Cuántos países incluye el dataset?", "sql": "SELECT COUNT(*) FROM paises"},
+  {"id": "A01", "categoria": "analisis", "pregunta": "¿Cuál fue el crecimiento anual compuesto del consumo total entre 1990 y 2019, en porcentaje?", "sql": "SELECT (POWER(SUM(CASE WHEN year = 2019 THEN consumption_kg END) / SUM(CASE WHEN year = 1990 THEN consumption_kg END), 1.0 / 29) - 1) * 100 FROM consumo WHERE reported"},
+  {"id": "A02", "categoria": "analisis", "pregunta": "¿Qué región ganó más participación en el consumo entre 1990 y 2019?", "contiene": ["Asia"]},
+  {"id": "A03", "categoria": "analisis", "pregunta": "¿Qué porcentaje del consumo de 2019 corresponde a Brasil?", "sql": "SELECT SUM(CASE WHEN country = 'Brazil' THEN consumption_kg END) / SUM(consumption_kg) * 100 FROM consumo WHERE year = 2019 AND reported"},
+  {"id": "P01", "categoria": "pronostico", "pregunta": "¿Cuánto se espera que consuma Vietnam en 2024?", "sql": "SELECT consumo_kg / 1e6 FROM pronosticos WHERE country = 'Viet Nam' AND year = 2024"},
+  {"id": "P02", "categoria": "pronostico", "pregunta": "¿Cuál es el rango del 80 % del pronóstico del consumo total para 2024?", "sql": "SELECT rango80_bajo_kg / 1e6, rango80_alto_kg / 1e6 FROM pronosticos WHERE country = 'TOTAL' AND year = 2024"},
+  {"id": "P03", "categoria": "pronostico", "pregunta": "¿Qué modelo se eligió para el pronóstico y cuál fue su error promedio en el backtest?", "contiene": ["AutoETS"], "sql": "SELECT smape_promedio_pct FROM evaluacion_modelos WHERE seleccionado"},
+  {"id": "M01", "categoria": "mercados", "pregunta": "¿Cuál es el mercado número 1 del ranking de oportunidad?", "contiene": ["Brasil"]},
+  {"id": "M02", "categoria": "mercados", "pregunta": "¿A qué segmento pertenece México?", "sql_texto": "SELECT segmento FROM mercados WHERE country = 'Mexico'"},
+  {"id": "G01", "categoria": "grafico", "pregunta": "Muéstrame un gráfico del consumo de Etiopía entre 1990 y 2019", "grafico": true},
+  {"id": "G02", "categoria": "grafico", "pregunta": "Haz un gráfico de barras con el consumo por región en 2019", "grafico": true},
+  {"id": "X01", "categoria": "contexto", "pregunta": "¿Por qué se interpretan los datos en kilogramos y no en tazas?", "contiene": ["60"]},
+  {"id": "X02", "categoria": "contexto", "pregunta": "¿Cómo se calcula el score de oportunidad?", "contiene": ["tamaño", "crecimiento"]},
+  {"id": "F01", "categoria": "fuera_de_alcance", "pregunta": "¿Cuál será el precio del café en 2025?", "rechazo": true},
+  {"id": "F02", "categoria": "fuera_de_alcance", "pregunta": "¿Cuánto café consume Estados Unidos?", "rechazo": true}
+]
