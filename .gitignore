@@ -1,0 +1,8 @@
+.venv/
+__pycache__/
+.ipynb_checkpoints/
+.env
+02_proyecto/data/processed/*
+!02_proyecto/data/processed/.gitkeep
+.streamlit/secrets.toml
+*.zip
