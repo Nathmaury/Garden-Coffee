@@ -24,8 +24,8 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-## Configuracion
-Copiar `.env.example` como `.env` y completar `ANTHROPIC_API_KEY` y `LLM_MODEL`.
+## Configuración
+Copiar `.env.example` como `.env` y completar `OPENAI_API_KEY` y `LLM_MODEL` (un modelo de OpenAI con soporte de function calling).
 
 ## Ejecución
 ```

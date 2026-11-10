@@ -2,6 +2,7 @@ import re
 import duckdb
 import pandas as pd
 from src import config
+from src.regions import add_region
 
 YEAR_PATTERN = r"\d{4}/\d{2}"
 COLUMNS = ["country", "coffee_type", "year", "crop_year", "consumption_kg", "reported", "zero_flag", "flat_series"]
@@ -55,16 +56,22 @@ def to_long(df, flat_threshold=3):
 def build_countries(df_long):
     return (
         df_long.groupby("country", as_index=False)
-        .agg(coffee_type=("coffee_type", "first"), reported=("reported", "first"), flat_series=("flat_series", "first"))
+        .agg(
+            coffee_type=("coffee_type", "first"),
+            region=("region", "first"),
+            reported=("reported", "first"),
+            flat_series=("flat_series", "first"),
+        )
     )
 
 
 def save(df_long):
     config.DATA_PROCESSED.mkdir(parents=True, exist_ok=True)
-    df_long.to_parquet(config.DATA_PROCESSED / "consumo_largo.parquet", index=False)
-    countries = build_countries(df_long)
+    df_db = add_region(df_long)
+    df_db.to_parquet(config.DATA_PROCESSED / "consumo_largo.parquet", index=False)
+    countries = build_countries(df_db)
     with duckdb.connect(str(config.DB_PATH)) as con:
-        con.register("consumo_view", df_long)
+        con.register("consumo_view", df_db)
         con.register("paises_view", countries)
         con.execute("CREATE OR REPLACE TABLE consumo AS SELECT * FROM consumo_view")
         con.execute("CREATE OR REPLACE TABLE paises AS SELECT * FROM paises_view")
