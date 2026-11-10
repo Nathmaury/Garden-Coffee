@@ -1,4 +1,4 @@
-# High Garden Coffee — Agente analítico
+# High Garden Coffee  Agente analítico
 
 ## Descripción
 
@@ -6,7 +6,7 @@
 
 ## Requisitos
 - Python 3.11 o superior
-- API key de Anthropic
+- API key de OpenAI
 
 ## Instalacion
 
@@ -34,7 +34,3 @@ streamlit run app.py
 ```
 
 ## Estructura
-
-## Evaluación
-
-## Supuestos y limitaciones

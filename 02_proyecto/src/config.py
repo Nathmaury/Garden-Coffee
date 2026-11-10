@@ -1,16 +1,14 @@
 from pathlib import Path
-impo
+import os
 from dotenv import load_dotenv
 
-ROOT_DIR = Path(__file__).resolve().parent.parent
-load_dotenv(ROOT_DIR / ".env")
+ROOT = Path(__file__).resolve().parents[1]
+load_dotenv(ROOT / ".env")
 
-DATA_RAW = ROOT_DIR / "data" / "raw"
-DATA_PROCESSED = ROOT_DIR / "data" / "processed"
+DATA_RAW = ROOT / "data" / "raw"
+DATA_PROCESSED = ROOT / "data" / "processed"
 DB_PATH = DATA_PROCESSED / "coffee.duckdb"
 RAW_FILE = DATA_RAW / "coffee_db.parquet"
 
-LLM_FILE = DATA_RAW / "coffee_db.parquet"
-
 LLM_MODEL = os.getenv("LLM_MODEL", "")
-ANTHROPIC_API_KEY = os.getenv("ANTHROPIC_API_KEY", "")
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "")
