@@ -6,7 +6,7 @@
 
 ## Requisitos
 - Python 3.11 o superior
-- API key de OpenAI
+- Un deployment de Azure OpenAI con soporte de function calling
 
 ## Instalacion
 
@@ -25,7 +25,7 @@ pip install -r requirements.txt
 ```
 
 ## Configuración
-Copiar `.env.example` como `.env` y completar `OPENAI_API_KEY` y `LLM_MODEL` (un modelo de OpenAI con soporte de function calling).
+Copiar `.env.example` como `.env` y completar `AZURE_OPENAI_ENDPOINT`, `AZURE_OPENAI_API_KEY` y `LLM_MODEL` con nombre del deployment
 
 ## Ejecución
 ```
