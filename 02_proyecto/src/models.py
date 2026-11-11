@@ -122,6 +122,32 @@ def calcular_score(features, pesos=PESOS_SCORE):
     })
     return (componentes * pd.Series(pesos)).sum(axis=1) * 100
 
+def series_precios(precios):
+    largo = precios.melt(id_vars="year", value_vars=["arabica_usc_lb", "robusta_usc_lb"], var_name="unique_id", value_name="y")
+    largo["unique_id"] = largo["unique_id"].map({"arabica_usc_lb": "Arábica", "robusta_usc_lb": "Robusta"})
+    largo["ds"] = pd.to_datetime(largo["year"].astype(str), format="%Y")
+    return largo[["unique_id", "ds", "y"]]
+
+
+def pronosticar_precios(precios, reales=None):
+    sf = StatsForecast(models=[Naive()], freq="YS", n_jobs=1)
+    fc = _con_unique_id(sf.forecast(df=series_precios(precios), h=HORIZONTE, level=NIVELES))
+    out = pd.DataFrame({
+        "tipo": fc["unique_id"],
+        "year": fc["ds"].dt.year,
+        "precio_usc_lb": fc["Naive"].astype(float),
+        "rango80_bajo": fc["Naive-lo-80"].clip(lower=0).astype(float),
+        "rango80_alto": fc["Naive-hi-80"].astype(float),
+        "rango95_bajo": fc["Naive-lo-95"].clip(lower=0).astype(float),
+        "rango95_alto": fc["Naive-hi-95"].astype(float),
+    })
+    if reales is not None:
+        r = reales.melt(id_vars="year", var_name="tipo", value_name="precio_real_usc_lb")
+        r["tipo"] = r["tipo"].map({"arabica_usc_lb": "Arábica", "robusta_usc_lb": "Robusta"})
+        out = out.merge(r, on=["tipo", "year"], how="left")
+        out["dentro_rango80"] = out["precio_real_usc_lb"].between(out["rango80_bajo"], out["rango80_alto"])
+    return out
+
 
 def run(df_long):
     series = preparar_series(df_long)

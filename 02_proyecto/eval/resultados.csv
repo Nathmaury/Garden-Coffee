@@ -1,281 +1,315 @@
 ronda,id,categoria,pregunta,correcto,detalle,pasos,tokens,segundos,respuesta
-1,C01,consulta,¿Cuál fue el consumo total de café en 2019?,True,,2,3131,3.0,"En **2019**, el consumo total de café doméstico en los países productores fue de **2,998.89 millones de kg**.
+1,C01,consulta,¿Cuál fue el consumo total de café en 2019?,True,,2,3802,3.3,"En **2019**, el consumo total doméstico de café en los países productores fue de **2.998,89 millones de kg**.
 
-**Insight de negocio:** ese volumen muestra un mercado interno muy grande; para exportadores como Garden Coffee, el consumo doméstico puede competir con la disponibilidad para exportación en varios orígenes."
-1,C02,consulta,¿Cuánto café consumió Brasil en 2019?,True,,2,3103,3.1,"Brasil consumió **1320.0 millones de kg** de café en 2019.
+**Insight de negocio:** es un mercado interno de gran tamaño; para Garden Coffee, los países productores con consumo doméstico alto pueden competir fuertemente por oferta local, no solo por exportación."
+1,C02,consulta,¿Cuánto café consumió Brasil en 2019?,True,,2,3809,3.0,"Brasil consumió **1.320 millones de kg** de café en **2019**.
 
-**Insight de negocio:** Brasil sigue siendo, con mucha diferencia, un mercado doméstico clave; cualquier cambio en su consumo impacta de forma muy relevante el total de países productores."
-1,C03,consulta,¿Qué país tuvo el mayor consumo en 2010?,True,,2,3142,2.0,"El país con mayor consumo doméstico de café en **2010** fue **Brasil**, con **1147.92 millones de kg**.
+**Insight de negocio:** Brasil sigue siendo un mercado doméstico enorme; para una exportadora, eso sugiere una base local de demanda muy fuerte que puede competir con parte de la oferta exportable."
+1,C03,consulta,¿Qué país tuvo el mayor consumo en 2010?,True,,2,3822,2.8,"El país con mayor consumo doméstico de café en **2010** fue **Brasil**, con **1,147.92 millones de kg**.
 
-**Insight de negocio:** Brasil sigue siendo el principal mercado doméstico entre los países productores, por lo que suele marcar la referencia para volumen y potencial de demanda interna."
-1,C04,consulta,¿Cuántos países incluye el dataset?,True,,2,3026,1.9,"El dataset incluye **55 países**.
+**Insight de negocio:** Brasil destaca claramente como el mercado doméstico más grande, por lo que suele ser un referente clave para volumen y tendencia en consumo interno."
+1,C04,consulta,¿Cuántos países incluye el dataset?,True,,2,3711,1.7,"El dataset incluye **55 países**.
 
-**Insight de negocio:** es una base lo bastante amplia para comparar patrones regionales y detectar mercados productores con mayor potencial de consumo doméstico."
-1,A01,analisis,"¿Cuál fue el crecimiento anual compuesto del consumo total entre 1990 y 2019, en porcentaje?",True,,2,3195,2.4,"El **crecimiento anual compuesto (CAGR)** del consumo total entre **1990 y 2019** fue de **3,3 %**.
+**Insight de negocio:** es una cobertura amplia de productores, suficiente para comparar patrones regionales y detectar mercados domésticos relevantes."
+1,A01,analisis,"¿Cuál fue el crecimiento anual compuesto del consumo total entre 1990 y 2019, en porcentaje?",True,,2,3875,2.7,"El **crecimiento anual compuesto (CAGR)** del consumo total entre **1990 y 2019** fue de **3,3 %**.
 
-**Insight de negocio:** a ese ritmo, el consumo doméstico en países productores mostró una expansión sostenida durante casi tres décadas, lo que refuerza la relevancia del mercado interno como complemento a la exportación."
-1,A02,analisis,¿Qué región ganó más participación en el consumo entre 1990 y 2019?,True,,2,3479,2.9,"La región que **más participación ganó** entre 1990 y 2019 fue **Asia y Oceanía**, con un aumento de **0,11** en su cuota del consumo total.
+**Insight de negocio:** esto sugiere que el consumo doméstico de café en países productores creció a un ritmo sostenido, lo que refuerza el atractivo de desarrollar estrategias de mercado local además de la exportación."
+1,A02,analisis,¿Qué región ganó más participación en el consumo entre 1990 y 2019?,True,,2,4262,2.8,"La región que **más participación ganó** entre 1990 y 2019 fue **Asia y Oceanía**.
 
-**Insight de negocio:** esto sugiere que el peso del consumo doméstico se ha desplazado hacia Asia y Oceanía, una señal de crecimiento estructural para priorizar allí estrategias de mercado y suministro."
-1,A03,analisis,¿Qué porcentaje del consumo de 2019 corresponde a Brasil?,True,,2,3345,2.2,"En **2019**, **Brasil** representó el **44.02%** del consumo doméstico total de café entre los países productores del dataset.
+- **1990:** 16,77%
+- **2019:** 27,64%
+- **Ganancia:** **+10,86 puntos porcentuales**
 
-**Insight de negocio:** Brasil concentra casi la mitad del consumo de 2019, así que cualquier estrategia de mercado doméstico allí tiene un peso desproporcionado en el total."
-1,P01,pronostico,¿Cuánto se espera que consuma Vietnam en 2024?,True,,2,3111,2.3,"Se espera que **Vietnam** consuma **191,7 millones de kg** de café en **2024**.
-
-**Insight de negocio:** Vietnam seguiría siendo un mercado doméstico muy grande; para una exportadora, eso puede indicar una base interna de demanda relevante y potencial competencia por grano en origen."
-1,P02,pronostico,¿Cuál es el rango del 80 % del pronóstico del consumo total para 2024?,True,,2,3172,2.0,"El **rango del 80 %** del pronóstico del **consumo total para 2024** es:
-
-- **Límite inferior:** **2.989 millones de kg**
-- **Límite superior:** **3.421 millones de kg**
-
-**Insight de negocio:** este rango sugiere una demanda doméstica total todavía muy sólida, con una banda de incertidumbre relevante para planificar oferta y logística."
-1,P03,pronostico,¿Qué modelo se eligió para el pronóstico y cuál fue su error promedio en el backtest?,True,,2,3153,2.1,"El modelo elegido fue **AutoETS**.
-
-Su **error promedio en el backtest** fue de **5.46% de sMAPE**.  
-Además, el **sMAPE total** fue **2.08%**.
-
-**Insight de negocio:** esto sugiere que el pronóstico seleccionado tiene una precisión razonablemente buena y es útil para planificar el mercado doméstico con un nivel de error moderado."
-1,M01,mercados,¿Cuál es el mercado número 1 del ranking de oportunidad?,True,,2,3267,2.0,"El mercado número 1 del ranking de oportunidad es **Brasil**.
-
-- **Región:** Sudamérica  
-- **Segmento:** Motores de crecimiento  
-- **Score:** 91  
-- **Consumo 2019:** **1320,0 millones de kg**  
-
-**Insight de negocio:** Brasil combina el mayor consumo doméstico con un perfil de crecimiento atractivo, por lo que suele ser el mercado más prioritario para volumen y escala."
-1,M02,mercados,¿A qué segmento pertenece México?,True,,2,3057,2.1,"México pertenece al segmento **Maduros estancados**.
-
-**Insight de negocio:** es un mercado grande pero con menor dinamismo relativo, así que suele requerir estrategias de eficiencia, retención y diferenciación más que expansión agresiva."
-1,G01,grafico,Muéstrame un gráfico del consumo de Etiopía entre 1990 y 2019,True,,3,5589,3.6,"Aquí tienes el gráfico del **consumo doméstico de café en Etiopía entre 1990 y 2019**.
-
-**Insight de negocio:** Etiopía muestra una tendencia claramente creciente y sostenida, lo que sugiere un mercado doméstico en expansión con potencial para absorber más producción local."
-1,G02,grafico,Haz un gráfico de barras con el consumo por región en 2019,True,,3,5032,3.5,"Aquí tienes el gráfico de barras con el **consumo doméstico de café por región en 2019**.
-
-**Insight de negocio:** Sudamérica concentra el mayor consumo regional, muy por encima del resto, así que es la región más relevante para priorizar estrategias de mercado doméstico."
-1,X01,contexto,¿Por qué se interpretan los datos en kilogramos y no en tazas?,True,,2,3354,2.2,"Se interpretan en **kilogramos** porque el dataset está construido con esa unidad de medida para el consumo anual, y no con tazas.
-
-Además, el propio contexto del análisis indica que los valores son compatibles con cifras de café en kg: por ejemplo, **Brasil en 2019/20 registra 1.320 millones de kg**, equivalente a **22 millones de sacos de 60 kg**. En cambio, pasar a tazas exigiría asumir cuántos gramos tiene cada taza, y esa conversión no está definida en los datos.
-
-**Insight de negocio:** usar kilogramos permite comparar países y tendencias de forma consistente; las tazas sirven para comunicación al consumidor, pero no para análisis agregado confiable."
-1,X02,contexto,¿Cómo se calcula el score de oportunidad?,False,no menciona 'tamaño'; no menciona 'crecimiento',2,3398,2.7,"No tengo documentado **cómo se calcula exactamente el score de oportunidad** en esta base.
-
-Lo que sí sé es que en la tabla **`mercados`** el score aparece como una métrica ya calculada, junto con otras variables como:
-
-- **consumo_2019_mkg**
-- **cagr_hist_pct**
-- **cagr_reciente_pct**
-- **volatilidad_pct**
-- **crec_esperado_pct**
-- **incertidumbre_pct**
-
-Por eso, el score parece ser un **índice compuesto** para priorizar mercados, pero **no tengo la fórmula ni los pesos** con esta documentación.
-
-**Limitación:** la base no incluye precios ni rentabilidad, así que el score no puede interpretarse como margen o beneficio esperado.
-
-Si quieres, puedo ayudarte a **interpretar el score comparando países concretos** o a **ver el ranking de oportunidad**."
-1,F01,fuera_de_alcance,¿Cuál será el precio del café en 2025?,True,,2,3345,2.2,"No puedo decirte **el precio del café en 2025** con este dataset.
-
-Este análisis solo contiene **consumo doméstico** y **pronósticos de consumo**, no precios. Para estimar precios harían falta series externas de mercado, por ejemplo:
-
-- precio internacional compuesto de la **ICO**
-- precios de **Arábica** y **Robusta**
-- variables de oferta, inventarios y tipo de cambio
-
-**Insight de negocio:** si quieres, puedo ayudarte a estimar **cómo podría evolucionar la demanda doméstica en 2025** en los países productores, que sí es algo que este dataset permite analizar."
-1,F02,fuera_de_alcance,¿Cuánto café consume Estados Unidos?,True,,5,8181,5.3,"El dataset **solo incluye países productores**. **Estados Unidos no está incluido**, así que no puedo dar su consumo doméstico con estos datos.
-
-Si quieres, puedo decirte **cuánto consumen los países productores disponibles** o buscar el consumo de un productor concreto, como **Brasil**, **Vietnam** o **Etiopía**."
-2,C01,consulta,¿Cuál fue el consumo total de café en 2019?,True,,2,3132,2.3,"El consumo total de café en **2019** fue de **2.998,89 millones de kg**.
-
-**Insight de negocio:** este nivel de demanda doméstica en países productores muestra un mercado interno enorme; para Garden Coffee, eso significa que en varios orígenes el consumo local compite de forma relevante con la disponibilidad exportable."
-2,C02,consulta,¿Cuánto café consumió Brasil en 2019?,True,,2,3112,2.2,"Brasil consumió **1.320,0 millones de kg** de café en **2019**.
-
-**Insight de negocio:** Brasil sigue siendo, con mucha diferencia, uno de los mayores mercados domésticos; para Garden Coffee, eso lo convierte en un país clave para estrategias de volumen y presencia de marca."
-2,C03,consulta,¿Qué país tuvo el mayor consumo en 2010?,True,,2,3165,2.2,"En **2010**, el país con mayor consumo doméstico de café fue **Brasil**, con **1,147.92 millones de kg**.
-
-**Insight de negocio:** Brasil es claramente el mercado doméstico más grande; cualquier estrategia comercial orientada a consumo interno debería priorizarlo por escala."
-2,C04,consulta,¿Cuántos países incluye el dataset?,True,,2,3030,1.8,"El dataset incluye **55 países**.
-
-**Insight de negocio:** es una base suficientemente amplia para comparar patrones de consumo doméstico entre productores y detectar mercados con mayor potencial."
-2,A01,analisis,"¿Cuál fue el crecimiento anual compuesto del consumo total entre 1990 y 2019, en porcentaje?",True,,2,3187,1.9,"El **crecimiento anual compuesto** del consumo total entre **1990 y 2019** fue de **3,3 %**.
-
-**Insight de negocio:** ese ritmo sostenido sugiere una expansión estructural del consumo doméstico en los países productores, lo que refuerza la oportunidad de desarrollar marcas y formatos orientados al mercado interno."
-2,A02,analisis,¿Qué región ganó más participación en el consumo entre 1990 y 2019?,True,,2,3792,2.8,"La **región que más ganó participación** en el consumo doméstico de café entre **1990 y 2019** fue **Asia y Oceanía**.
-
-- **1990:** 16.77%
-- **2019:** 27.64%
-- **Cambio:** **+10.86 puntos porcentuales**
-
-**Insight de negocio:** este aumento sugiere que Asia y Oceanía es la región con mayor expansión relativa en demanda doméstica, lo que la convierte en una zona especialmente atractiva para priorizar crecimiento comercial."
-2,A03,analisis,¿Qué porcentaje del consumo de 2019 corresponde a Brasil?,True,,2,3429,2.7,"En **2019**, **Brasil** representó el **44,02 %** del consumo doméstico total de café entre los países productores.
+**Insight de negocio:** esto sugiere que Asia y Oceanía fue el principal motor de expansión del consumo doméstico entre las regiones productoras, por lo que merece especial atención comercial y de abastecimiento."
+1,A03,analisis,¿Qué porcentaje del consumo de 2019 corresponde a Brasil?,True,,2,4088,3.0,"En **2019**, Brasil representó el **44,02 %** del consumo doméstico total de café entre los países productores del dataset.
 
 - **Brasil:** **1.320,00 millones de kg**
 - **Total 2019:** **2.998,89 millones de kg**
 
-**Insight de negocio:** Brasil concentró casi la mitad del consumo productor en 2019, así que cualquier cambio en su demanda doméstica puede mover de forma importante el mercado regional."
-2,P01,pronostico,¿Cuánto se espera que consuma Vietnam en 2024?,True,,2,3103,2.3,"Se espera que **Vietnam** consuma en **2024** حوالي **191.7 millones de kg** de café doméstico.
+**Insight de negocio:** Brasil concentró casi la mitad del consumo doméstico reportado en 2019, así que es un mercado clave tanto por volumen como por sensibilidad a cambios en demanda interna."
+1,P01,pronostico,¿Cuánto se espera que consuma Vietnam en 2024?,True,,2,3963,2.6,"En **Vietnam**, el consumo doméstico esperado para **2024** es de **191,7 millones de kg**.
 
-**Insight de negocio:** Vietnam se mantiene como un mercado doméstico muy relevante en volumen, lo que sugiere una base de demanda interna suficientemente grande como para complementar estrategias de exportación."
-2,P02,pronostico,¿Cuál es el rango del 80 % del pronóstico del consumo total para 2024?,True,,2,3174,2.1,"El **rango del 80 %** del pronóstico del **consumo total para 2024** es:
+- **Rango 80 %:** 129,6 a 253,9 millones de kg  
+- **Rango 95 %:** 96,6 a 286,8 millones de kg  
 
-- **Límite inferior:** **2,989.1 millones de kg**
-- **Límite superior:** **3,421.1 millones de kg**
+**Insight de negocio:** Vietnam seguiría siendo un mercado doméstico muy relevante; la amplitud del rango sugiere bastante incertidumbre, así que conviene planificar con margen en volumen."
+1,P02,pronostico,¿Cuál es el rango del 80 % del pronóstico del consumo total para 2024?,True,,2,3844,1.9,"Para **2024**, el **rango del 80 % del pronóstico del consumo total** es:
 
-**Insight de negocio:** este intervalo te da una banda útil para planificar inventario y capacidad comercial con una incertidumbre moderada en el mercado agregado."
-2,P03,pronostico,¿Qué modelo se eligió para el pronóstico y cuál fue su error promedio en el backtest?,True,,2,3163,2.4,"El modelo elegido para el pronóstico fue **AutoETS**.
+- **2.989 a 3.421 millones de kg**
 
-Su **error promedio en el backtest** fue de **5.46% sMAPE**.  
-Como referencia, el **sMAPE total** fue **2.08%**.
+Ese intervalo refleja la incertidumbre del pronóstico de consumo agregado.  
+**Insight de negocio:** si estás planificando abastecimiento, conviene usar el extremo alto como escenario de seguridad para evitar faltantes."
+1,P03,pronostico,¿Qué modelo se eligió para el pronóstico y cuál fue su error promedio en el backtest?,True,,2,3830,1.9,"Se eligió **AutoETS** para el pronóstico.
 
-**Insight de negocio:** usar AutoETS sugiere un enfoque robusto para series de consumo doméstico relativamente estables, con un error promedio contenido para apoyar planificación de oferta y demanda."
-2,M01,mercados,¿Cuál es el mercado número 1 del ranking de oportunidad?,True,,2,3256,2.5,"El **mercado número 1** del ranking de oportunidad es **Brasil**.
+Su **error promedio en el backtest** fue de **5.46% sMAPE**; el **sMAPE total** fue **2.08%**.
 
-- **Segmento:** Motores de crecimiento  
-- **Score:** 91  
-- **Consumo 2019:** **1.320 millones de kg**
+**Insight de negocio:** un error promedio bajo sugiere que el pronóstico de consumo es razonablemente fiable para planificar abastecimiento y demanda en el corto plazo."
+1,M01,mercados,¿Cuál es el mercado número 1 del ranking de oportunidad?,True,,2,3960,2.2,"El **mercado número 1** del ranking de oportunidad es **Brasil**.
 
-**Insight de negocio:** Brasil combina una base de consumo muy grande con una buena dinámica de crecimiento, por lo que es el mercado más atractivo del ranking para priorizar."
-2,M02,mercados,¿A qué segmento pertenece México?,True,,2,3113,2.1,"México pertenece al segmento **Maduros estancados**.
+- **Segmento:** Motores de crecimiento
+- **Score:** 91.0
+- **Consumo 2019:** **1320.0 millones de kg**
+- **Crecimiento histórico 1990-2019:** 3.46%
 
-Además, en el ranking ocupa el puesto **14** con un **score de 63.5**.
+**Insight de negocio:** Brasil combina el mayor mercado doméstico con un perfil de crecimiento sólido, así que es el país más atractivo para volumen y escala."
+1,M02,mercados,¿A qué segmento pertenece México?,True,,2,3788,2.0,"México pertenece al segmento **Maduros estancados**.
 
-**Insight de negocio:** es un mercado grande pero con dinamismo limitado, así que suele ser más útil para estrategias de defensa y valor que para apostar por crecimiento rápido."
-2,G01,grafico,Muéstrame un gráfico del consumo de Etiopía entre 1990 y 2019,True,,3,5643,4.6,"Aquí tienes el gráfico del consumo doméstico de café en **Etiopía** entre **1990 y 2019**.
+Además, en el dataset aparece en la región **Centroamérica y Caribe** y con tipo de café predominante **Arabica/Robusta**.  
+**Insight de negocio:** es un mercado con base de consumo ya establecida, pero con menor dinamismo relativo que los segmentos de crecimiento."
+1,G01,grafico,Muéstrame un gráfico del consumo de Etiopía entre 1990 y 2019,True,,3,6644,4.0,"Aquí tienes el gráfico del consumo doméstico de café en **Etiopía** entre **1990 y 2019**.
 
-El consumo pasó de **72,0 millones de kg** en 1990 a **226,86 millones de kg** en 2019.
+El consumo pasó de **72.0 millones de kg** en 1990 a **226.86 millones de kg** en 2019.
 
-**Insight de negocio:** Etiopía muestra una tendencia de crecimiento sostenido y fuerte en consumo interno, lo que sugiere una base doméstica cada vez más relevante para la oferta exportable."
-2,G02,grafico,Haz un gráfico de barras con el consumo por región en 2019,True,,3,5004,3.1,"Aquí tienes el gráfico de barras del **consumo doméstico de café por región en 2019**.
+**Insight de negocio:** Etiopía muestra una trayectoria de consumo interno muy sólida y sostenida, lo que puede reducir el volumen disponible para exportación si la demanda doméstica sigue creciendo."
+1,G02,grafico,Haz un gráfico de barras con el consumo por región en 2019,True,,3,6034,3.0,"Aquí tienes el gráfico de barras con el consumo doméstico de café por región en 2019.
 
-**Insight de negocio:** Sudamérica concentra el mayor consumo, con una escala muy superior al resto de regiones, así que es la zona más relevante para priorizar estrategias de mercado doméstico."
-2,X01,contexto,¿Por qué se interpretan los datos en kilogramos y no en tazas?,False,no menciona '60',2,3430,2.2,"Se interpreta en **kilogramos** porque así están construidos los datos del dataset: son volúmenes anuales de consumo, no conteos de tazas.
+**Insight:** Sudamérica concentra el mayor consumo regional, con mucha ventaja sobre el resto, lo que sugiere una base doméstica muy fuerte para el café en los grandes productores sudamericanos."
+1,X01,contexto,¿Por qué se interpretan los datos en kilogramos y no en tazas?,True,,2,4105,2.7,"Se interpretan en **kilogramos** porque el dataset está construido así, aunque a veces el enunciado mencione “tazas”.
 
-Además, convertir a tazas no sería directo, porque habría que asumir **cuántos gramos de café lleva cada taza**, y eso cambia según país, preparación y costumbre. En cambio, el kilogramo es una unidad estándar y comparable entre países y años.
+La evidencia es que:
+- los valores son **múltiplos exactos de 60**, algo consistente con kg;
+- por ejemplo, **Brasil** registra **1.320 millones de kg** en 2019/20, equivalente a **22 millones de sacos de 60 kg**, lo que coincide con la Organización Internacional del Café.
 
-**Insight de negocio:** usar kg permite comparar mercados de forma consistente; si quieres traducirlo a consumo por persona o tazas, habría que definir un supuesto de preparación."
-2,X02,contexto,¿Cómo se calcula el score de oportunidad?,True,,2,3554,3.0,"El **score de oportunidad** va de **0 a 100** y se construye combinando **cuatro componentes** convertidos a percentiles:
+En cambio, pasar a **tazas** exigiría asumir cuántos gramos tiene una taza, y esa conversión no está en los datos.
+
+**Insight de negocio:** usar kg permite comparar países de forma estándar y enlazar mejor el consumo doméstico con la logística y el volumen físico exportable."
+1,X02,contexto,¿Cómo se calcula el score de oportunidad?,True,,2,4145,3.0,"El **score de oportunidad** va de **0 a 100** y combina cuatro componentes convertidos a **percentiles**:
 
 - **Tamaño del mercado**: **35 %**
 - **Crecimiento esperado 2019-2024**: **35 %**
 - **Estabilidad / baja volatilidad**: **15 %**
 - **Certidumbre del pronóstico / rango estrecho**: **15 %**
 
-Se usan **percentiles** para evitar que un país muy grande, como Brasil, domine por completo el ranking solo por volumen.
+La idea es que los percentiles evitan que un país muy grande, como Brasil, domine por completo el ranking. Los pesos son una decisión de negocio; además, se probó sensibilidad con escenarios que priorizan crecimiento o volumen, y los países que se mantienen en el **top 10** en los tres escenarios son las opciones más robustas.
 
-**Importante:** los **pesos son una decisión de negocio**, no una fórmula “natural”. Además, se probó sensibilidad con escenarios que priorizan más crecimiento o más volumen; los países que se mantienen en el **top 10** en esos escenarios son las apuestas más robustas.
+**Insight de negocio:** este score sirve para priorizar países donde hay una combinación atractiva de escala, crecimiento y menor incertidumbre, no solo el mayor volumen absoluto."
+1,P04,pronostico,¿Cuál es el rango del 80 % del precio del Arábica para 2024?,True,,2,3866,2.7,"Para **2024**, el rango del **80 %** del precio del **Arábica** es de **27.74 a 247.18 centavos de dólar por libra**.
 
-**Insight de negocio:** este score ayuda a priorizar mercados donde hay buena combinación de **escala, crecimiento y menor riesgo**, no solo tamaño absoluto."
-2,F01,fuera_de_alcance,¿Cuál será el precio del café en 2025?,True,,2,3304,2.5,"No puedo decirte **el precio del café en 2025** con este dataset.
+Este rango viene de la tabla de **pronóstico de precios**; se construyó con una investigación aparte basada en **FMI y la Organización Internacional del Café**.  
 
-Aquí solo tenemos **consumo doméstico** en países productores y **pronósticos de demanda**, no series de **precios**. Para estimar un precio futuro harían falta datos externos como:
+**Insight de negocio:** el intervalo es muy amplio, lo que refleja alta incertidumbre y la sensibilidad del Arábica a oferta, clima e inventarios."
+1,F01,fuera_de_alcance,¿Qué rentabilidad tiene exportar café a Brasil?,True,,2,4079,3.0,"No puedo responder esa **rentabilidad** con este dataset.
 
-- el precio internacional del café (por ejemplo, ICO),
-- series de Arábica y Robusta,
-- y, idealmente, variables macroeconómicas y de oferta.
+El motivo es que aquí solo tengo **consumo doméstico** en países productores y algunos **precios históricos/futuros**, pero no tengo:
+- costos de producción,
+- costos logísticos,
+- fletes,
+- aranceles,
+- tipo de cambio,
+- ni precios de venta por mercado de destino como Brasil.
 
-**Insight de negocio:** si quieres, puedo ayudarte a estimar **la demanda doméstica de café en 2025** para países productores, que sí está cubierta por estos datos."
-2,F02,fuera_de_alcance,¿Cuánto café consume Estados Unidos?,True,,4,6596,4.4,"No puedo responderlo con este dataset.
+Además, **Brasil es un país productor**, no un mercado importador principal dentro de este análisis.
 
-El conjunto de datos solo incluye **países productores** de café, y **Estados Unidos no aparece** en la tabla de países. Para estimar su consumo haría falta una fuente de países consumidores o un dataset de comercio/consumo doméstico que incluya EE. UU.
+Si quieres, sí puedo ayudarte a medir algo relacionado, por ejemplo:
+- el **tamaño del consumo doméstico** de Brasil,
+- su **evolución histórica**,
+- o el **precio internacional** del café arábica o robusta, que viene de una investigación aparte del FMI y la OIC.
 
-**Insight de negocio:** si buscas mercados de consumo para exportación, conviene analizar primero países productores con crecimiento doméstico; ahí el consumo interno puede reducir el excedente exportable."
-3,C01,consulta,¿Cuál fue el consumo total de café en 2019?,True,,2,3113,2.0,"El consumo total de café en **2019** fue de **2,998.89 millones de kg**.
+**Insight de negocio:** para evaluar rentabilidad de exportar a Brasil haría falta un modelo completo de margen por tonelada, no solo datos de consumo."
+1,F02,fuera_de_alcance,¿Cuánto café consume Estados Unidos?,True,,4,7867,4.5,"No puedo responderlo con este dataset: **solo incluye países productores**, y **Estados Unidos no aparece** en la tabla de consumo.
 
-**Insight de negocio:** ese tamaño de mercado doméstico en países productores sigue siendo muy relevante; para Garden Coffee, esto sugiere una base amplia de demanda interna además de la exportación."
-3,C02,consulta,¿Cuánto café consumió Brasil en 2019?,True,,2,3105,2.2,"Brasil consumió **1.320 millones de kg** de café en **2019**.
+Si quieres, puedo darte el consumo de un productor específico como **Brasil, Vietnam, Etiopía o Filipinas**."
+2,C01,consulta,¿Cuál fue el consumo total de café en 2019?,True,,2,3807,2.2,"En **2019**, el consumo total de café en los países productores fue de **2,998.89 millones de kg**.
 
-**Insight de negocio:** Brasil sigue siendo uno de los mayores mercados domésticos del mundo, por lo que cualquier cambio en su demanda interna tiene impacto relevante en la oferta exportable."
-3,C03,consulta,¿Qué país tuvo el mayor consumo en 2010?,True,,2,3139,2.1,"El país con mayor consumo doméstico en **2010** fue **Brasil**, con **1147.92 millones de kg**.
+**Insight de negocio:** ese nivel de consumo interno sugiere un mercado doméstico muy relevante; para una exportadora, vigilar este volumen ayuda a anticipar cuánto café podría quedarse en origen en lugar de salir al mercado internacional."
+2,C02,consulta,¿Cuánto café consumió Brasil en 2019?,True,,2,3782,2.1,"Brasil consumió **1.320 millones de kg** de café en **2019**.
 
-**Insight de negocio:** Brasil no solo lidera por tamaño de mercado, sino que sigue siendo el principal mercado doméstico a vigilar para volumen y estabilidad de demanda."
-3,C04,consulta,¿Cuántos países incluye el dataset?,True,,2,3028,2.1,"El dataset incluye **55 países**.
+**Insight de negocio:** es uno de los mayores mercados domésticos de la región, así que para Garden Coffee Brasil sigue siendo un país clave tanto por volumen como por estabilidad de demanda."
+2,C03,consulta,¿Qué país tuvo el mayor consumo en 2010?,True,,2,3815,2.3,"El país con mayor consumo doméstico de café en **2010** fue **Brasil**, con **1,147.92 millones de kg**.
 
-**Insight de negocio:** es una base lo bastante amplia para comparar patrones de consumo doméstico entre productores de distintas regiones."
-3,A01,analisis,"¿Cuál fue el crecimiento anual compuesto del consumo total entre 1990 y 2019, en porcentaje?",True,,2,3181,2.2,"El **crecimiento anual compuesto** del consumo total entre **1990 y 2019** fue de **3.3%**.
+**Insight de negocio:** Brasil sigue siendo el mercado doméstico más grande; para Garden Coffee, es el país productor clave a vigilar por volumen absoluto de demanda."
+2,C04,consulta,¿Cuántos países incluye el dataset?,True,,2,3716,1.9,"El dataset incluye **55 países**.
 
-**Insight de negocio:** este ritmo sostenido sugiere una expansión estructural del consumo doméstico en países productores, lo que refuerza la oportunidad para estrategias de mercado de largo plazo."
-3,A02,analisis,¿Qué región ganó más participación en el consumo entre 1990 y 2019?,True,,2,3595,2.6,"La región que **más ganó participación** en el consumo doméstico de café entre 1990 y 2019 fue **Asia y Oceanía**.
+**Insight de negocio:** esa cobertura permite comparar el consumo doméstico entre los principales países productores con una base bastante amplia y útil para segmentación comercial."
+2,A01,analisis,"¿Cuál fue el crecimiento anual compuesto del consumo total entre 1990 y 2019, en porcentaje?",True,,2,3907,2.5,"El **crecimiento anual compuesto (CAGR)** del consumo total entre **1990 y 2019** fue de **3.3%**.
 
-- **1990:** 16.77%
-- **2019:** 27.64%
+**Insight de negocio:** este ritmo sugiere una expansión sostenida del consumo doméstico en los países productores, lo que refuerza la importancia de combinar exportación con estrategias de mercado local."
+2,A02,analisis,¿Qué región ganó más participación en el consumo entre 1990 y 2019?,True,,2,4167,3.1,"La región que **más ganó participación** en el consumo doméstico de café entre **1990 y 2019** fue **Asia y Oceanía**.
+
+- **Participación en 1990:** 17%
+- **Participación en 2019:** 28%
+- **Ganancia:** **+10.86 puntos porcentuales**
+
+**Insight de negocio:** esto sugiere que el consumo doméstico se ha desplazado con fuerza hacia Asia y Oceanía, una señal de crecimiento estructural muy relevante para priorizar mercados y estrategias de expansión."
+2,A03,analisis,¿Qué porcentaje del consumo de 2019 corresponde a Brasil?,True,,2,3835,2.1,"En **2019**, **Brasil** representó el **44,02 %** del consumo doméstico total de café entre los países productores reportados.
+
+**Insight de negocio:** Brasil concentra una parte muy grande del consumo interno, así que cualquier cambio en su demanda doméstica puede mover de forma importante el total regional."
+2,P01,pronostico,¿Cuánto se espera que consuma Vietnam en 2024?,True,,2,3952,2.1,"En **Vietnam**, el consumo doméstico esperado para **2024** es de **191,7 millones de kg**.
+
+- **Rango 80 %**: **129,6 a 253,9 millones de kg**
+- **Rango 95 %**: **96,6 a 286,8 millones de kg**
+
+Esto viene de los **pronósticos de consumo** del dataset.  
+**Insight de negocio:** Vietnam sigue siendo un mercado doméstico muy grande; el rango amplio sugiere que conviene planificar oferta y logística con holgura."
+2,P02,pronostico,¿Cuál es el rango del 80 % del pronóstico del consumo total para 2024?,False,"no aparece el valor esperado [2989.1, 3421.11]",2,3850,2.0,"El **rango del 80 %** del pronóstico del **consumo total** para **2024** es de **2.99 a 3.42 millones de kg**.
+
+**Insight de negocio:** este rango te da una referencia útil para planificar demanda agregada con una incertidumbre moderada; si necesitas, también puedo darte el rango del 95 % para un escenario más conservador."
+2,P03,pronostico,¿Qué modelo se eligió para el pronóstico y cuál fue su error promedio en el backtest?,True,,2,3834,2.1,"El modelo elegido para el pronóstico fue **AutoETS**.
+
+Su error promedio en el backtest fue **5.46% de sMAPE**; el **sMAPE total** fue **2.08%**.
+
+**Insight de negocio:** un error promedio de ese nivel sugiere que el pronóstico de consumo es relativamente confiable para planificar mercado y demanda en el corto plazo."
+2,M01,mercados,¿Cuál es el mercado número 1 del ranking de oportunidad?,True,,2,3989,2.4,"El mercado número 1 del ranking de oportunidad es **Brasil**.
+
+- **Segmento:** Motores de crecimiento  
+- **Score:** 91  
+- **Consumo 2019:** 1320,0 millones de kg  
+- **Crecimiento histórico (1990-2019):** 3,46 %  
+- **Crecimiento reciente (2010-2019):** 1,56 %  
+- **Volatilidad:** 2,26 %  
+
+**Insight de negocio:** Brasil combina un mercado muy grande con crecimiento sostenido, así que sigue siendo el principal país a priorizar para estrategias de volumen en consumo doméstico."
+2,M02,mercados,¿A qué segmento pertenece México?,True,,2,3782,2.3,"México pertenece al segmento **Maduros estancados**.
+
+Además, su **score** es **63.5**.  
+**Insight de negocio:** es un mercado con base de consumo ya consolidada, pero con menor dinamismo relativo frente a los segmentos de crecimiento."
+2,G01,grafico,Muéstrame un gráfico del consumo de Etiopía entre 1990 y 2019,True,,3,6568,2.9,"Aquí tienes el gráfico del consumo doméstico de café en **Etiopía** entre **1990 y 2019**.
+
+**Insight de negocio:** el consumo muestra una tendencia claramente ascendente durante todo el periodo, lo que sugiere un mercado doméstico en expansión y una base sólida de demanda interna."
+2,G02,grafico,Haz un gráfico de barras con el consumo por región en 2019,True,,3,6086,3.7,"Aquí tienes el gráfico de barras del **consumo doméstico de café por región en 2019**.
+
+**Valores clave:**
+- **Sudamérica:** 1,547.33 millones de kg
+- **Asia y Oceanía:** 828.87 millones de kg
+- **África:** 319.94 millones de kg
+- **Centroamérica y Caribe:** 302.76 millones de kg
+
+**Insight de negocio:** Sudamérica concentró el mayor consumo regional en 2019, por lo que sigue siendo la principal referencia para volumen doméstico en países productores."
+2,X01,contexto,¿Por qué se interpretan los datos en kilogramos y no en tazas?,True,,2,4075,2.5,"Se interpretan en **kilogramos** porque esa es la unidad en la que está construido el dataset. Además, el análisis documental indica que los valores son múltiplos exactos de 60 y que, por ejemplo, Brasil registra **1.320 millones de kg** en 2019/20, equivalente a **22 millones de sacos de 60 kg**, lo que es consistente con la metodología de comercio de café.
+
+En cambio, **“tazas” no es una unidad directa del dataset**: convertir kilos a tazas exige asumir cuántos gramos de café usa cada taza, y eso varía según país, método de preparación y tipo de bebida.
+
+**Insight de negocio:** usar kilogramos permite comparar países de forma estandarizada y conectar mejor el consumo doméstico con producción, inventarios y flujos comerciales."
+2,X02,contexto,¿Cómo se calcula el score de oportunidad?,True,,2,4078,2.5,"El **score de oportunidad** va de **0 a 100** y se calcula combinando **cuatro componentes**, todos convertidos a **percentiles** para que un país muy grande no domine por volumen:
+
+- **Tamaño**: 35%
+- **Crecimiento esperado 2019-2024**: 35%
+- **Estabilidad / baja volatilidad**: 15%
+- **Certidumbre del pronóstico / rango estrecho**: 15%
+
+La idea es equilibrar **mercado actual** y **potencial futuro**. Los **pesos son una decisión de negocio**, no una verdad estadística única.
+
+**Insight de negocio:** este score sirve para priorizar países donde vale la pena combinar **escala** con **crecimiento**, evitando que el ranking se sesgue solo por mercados enormes."
+2,P04,pronostico,¿Cuál es el rango del 80 % del precio del Arábica para 2024?,True,,2,3868,2.4,"Para **2024**, el rango del **80 %** del precio del **Arábica** es de **27.74 a 247.18 centavos de dólar por libra**.
+
+Este rango proviene de la tabla de **pronóstico de precios** basada en una investigación aparte del dataset original, usando datos del **FMI y la Organización Internacional del Café**.
+
+**Insight de negocio:** el rango es muy amplio, así que conviene planificar compras con bastante flexibilidad financiera y cobertura ante volatilidad."
+2,F01,fuera_de_alcance,¿Qué rentabilidad tiene exportar café a Brasil?,True,,2,4151,2.5,"No puedo calcular la **rentabilidad de exportar café a Brasil** con este dataset.
+
+Este conjunto de datos solo tiene **consumo doméstico** de café en países productores y, aparte, **precios internacionales promedio**. Para evaluar rentabilidad harían falta, como mínimo:
+
+- precio de venta en Brasil o precio de exportación
+- costos de producción
+- flete, seguros, aranceles e impuestos
+- tipo de cambio y condiciones contractuales
+- volumen exportado
+
+Si quieres, sí puedo ayudarte a analizar **si Brasil es un mercado grande o en crecimiento** para consumo doméstico, que es lo que sí cubre el dataset.  
+**Insight de negocio:** Brasil es útil para estudiar demanda interna, pero no para estimar margen de exportación sin datos de costos y precios de destino."
+2,F02,fuera_de_alcance,¿Cuánto café consume Estados Unidos?,True,,5,9812,4.7,"No puedo responder para **Estados Unidos** con este dataset.
+
+El conjunto de datos solo incluye **países productores** de café, y Estados Unidos no está entre ellos. Si quieres, puedo ayudarte con el consumo doméstico de otro productor como **Brasil, Vietnam, Etiopía o Filipinas**."
+3,C01,consulta,¿Cuál fue el consumo total de café en 2019?,True,,2,3788,1.8,"El **consumo total de café en 2019** fue de **2,998.89 millones de kg**.
+
+**Insight de negocio:** ese nivel muestra un mercado doméstico muy grande en países productores, relevante para capturar demanda local además de la exportación."
+3,C02,consulta,¿Cuánto café consumió Brasil en 2019?,True,,2,3776,2.1,"Brasil consumió **1,320 millones de kg** de café en **2019**.
+
+**Insight de negocio:** Brasil sigue siendo, con diferencia, un mercado doméstico enorme; eso lo convierte en un país clave para marcas, formatos y estrategias de volumen."
+3,C03,consulta,¿Qué país tuvo el mayor consumo en 2010?,True,,2,3824,2.7,"En **2010**, el país con mayor consumo doméstico de café fue **Brasil**, con **1,147.92 millones de kg**.
+
+**Insight de negocio:** Brasil concentra el mayor mercado interno entre los países productores, así que sigue siendo un país clave tanto por volumen como por estabilidad de demanda."
+3,C04,consulta,¿Cuántos países incluye el dataset?,True,,2,3710,2.2,"El dataset incluye **55 países**.
+
+**Insight de negocio:** es una cobertura amplia de países productores, útil para comparar patrones de consumo doméstico entre regiones."
+3,A01,analisis,"¿Cuál fue el crecimiento anual compuesto del consumo total entre 1990 y 2019, en porcentaje?",True,,2,3870,2.3,"El **crecimiento anual compuesto del consumo total** entre **1990 y 2019** fue de **3,3 %**.
+
+**Insight de negocio:** un crecimiento sostenido de ese nivel sugiere que el consumo doméstico en países productores siguió ganando peso de forma bastante estable durante tres décadas."
+3,A02,analisis,¿Qué región ganó más participación en el consumo entre 1990 y 2019?,True,,2,4218,2.5,"La región que **más ganó participación** en el consumo doméstico de café entre 1990 y 2019 fue **Asia y Oceanía**.
+
+- **1990:** 17.0 %
+- **2019:** 28.0 %
 - **Cambio:** **+10.86 puntos porcentuales**
 
-**Insight de negocio:** esto sugiere que Asia y Oceanía fue el principal motor de expansión relativa del consumo doméstico, una señal útil para priorizar desarrollo comercial y posicionamiento de marca en esa región."
-3,A03,analisis,¿Qué porcentaje del consumo de 2019 corresponde a Brasil?,True,,2,3379,2.5,"Brasil representó **44.02 %** del consumo doméstico total de café en **2019**.
+Las otras regiones perdieron participación o casi no cambiaron.
 
-- **Brasil:** 1,320.0 millones de kg  
-- **Total países reportados:** 2,998.89 millones de kg
+**Insight de negocio:** este aumento sugiere que **Asia y Oceanía** fue el principal motor de expansión relativa del consumo doméstico, así que puede ser una región prioritaria para estrategias de crecimiento y posicionamiento."
+3,A03,analisis,¿Qué porcentaje del consumo de 2019 corresponde a Brasil?,True,,2,4061,2.7,"En **2019**, **Brasil** representó el **44.02%** del consumo doméstico total de café entre los países productores reportados.
 
-**Insight de negocio:** Brasil concentra una parte muy grande del consumo doméstico en países productores, así que pequeñas variaciones en su mercado interno pueden mover bastante el total agregado."
-3,P01,pronostico,¿Cuánto se espera que consuma Vietnam en 2024?,True,,2,3115,2.5,"En **Vietnam**, el consumo doméstico esperado para **2024** es de **191,7 millones de kg**.
+- **Brasil:** **1,320.0 millones de kg**
+- **Total:** **2,998.89 millones de kg**
 
-**Insight de negocio:** Vietnam sigue mostrando una demanda interna muy relevante; esto puede competir con la disponibilidad exportable, así que conviene vigilar el balance entre consumo local y oferta para exportación."
-3,P02,pronostico,¿Cuál es el rango del 80 % del pronóstico del consumo total para 2024?,True,,2,3187,2.3,"El **rango del 80 %** del pronóstico del consumo total para **2024** es:
+**Insight de negocio:** Brasil concentra casi la mitad del consumo doméstico del grupo, así que cualquier cambio en su demanda interna puede mover de forma importante el mercado agregado."
+3,P01,pronostico,¿Cuánto se espera que consuma Vietnam en 2024?,True,,2,3953,2.2,"En **Vietnam**, el consumo doméstico esperado para **2024** es de **191.7 millones de kg**.
 
-- **Límite inferior:** **2.989 millones de kg**
-- **Límite superior:** **3.421 millones de kg**
+El rango de incertidumbre es amplio:
+- **80 %**: entre **129.6 y 253.9 millones de kg**
+- **95 %**: entre **96.6 y 286.8 millones de kg**
 
-**Insight de negocio:** este rango sugiere que el consumo doméstico total en los países productores sigue siendo robusto en 2024, con una incertidumbre razonable que conviene considerar al planificar oferta y cobertura."
-3,P03,pronostico,¿Qué modelo se eligió para el pronóstico y cuál fue su error promedio en el backtest?,True,,2,3147,2.1,"Se eligió **AutoETS**.
+**Insight de negocio:** Vietnam sigue mostrando una demanda interna grande y con mucha incertidumbre, así que conviene planificar inventarios y cobertura comercial con escenarios amplios, no con un solo valor."
+3,P02,pronostico,¿Cuál es el rango del 80 % del pronóstico del consumo total para 2024?,True,,2,3844,2.4,"Para **2024**, el **rango del 80 %** del pronóstico del **consumo total** es de **2,989.1 a 3,421.1 millones de kg**.
 
-Su **error promedio en el backtest** fue de **5.46% sMAPE**.  
-Además, el **sMAPE total** fue **2.08%**.
+**Insight de negocio:** este intervalo da una buena referencia para planificar volumen agregado; la amplitud refleja la incertidumbre normal de un pronóstico a varios años vista."
+3,P03,pronostico,¿Qué modelo se eligió para el pronóstico y cuál fue su error promedio en el backtest?,True,,2,3830,1.9,"Se eligió **AutoETS** para el pronóstico.
 
-**Insight de negocio:** este nivel de error sugiere un pronóstico bastante sólido para seguimiento de demanda doméstica, útil para priorizar mercados con mayor visibilidad."
-3,M01,mercados,¿Cuál es el mercado número 1 del ranking de oportunidad?,True,,2,3253,2.1,"El **mercado número 1** del ranking de oportunidad es **Brasil**.
+Su error promedio en el backtest fue de **5,46 % sMAPE**; el **sMAPE total** fue **2,08 %**.
+
+**Insight de negocio:** esto sugiere que el modelo captura bastante bien el patrón agregado del consumo y es una base sólida para planificar volúmenes."
+3,M01,mercados,¿Cuál es el mercado número 1 del ranking de oportunidad?,True,,2,3976,2.2,"El **mercado número 1** del ranking de oportunidad es **Brasil**.
 
 - **Segmento:** Motores de crecimiento
 - **Score:** 91
-- **Consumo 2019:** **1.320 millones de kg**
+- **Consumo 2019:** **1320,0 millones de kg**
+- **Crecimiento histórico 1990-2019:** 3,46%
+- **Crecimiento reciente 2010-2019:** 1,56%
 
-**Insight de negocio:** Brasil combina un mercado doméstico enorme con buen dinamismo, así que es un país clave para priorizar volumen y presencia comercial."
-3,M02,mercados,¿A qué segmento pertenece México?,True,,2,3149,2.1,"México pertenece al segmento **Maduros estancados**.
+**Insight de negocio:** Brasil combina el mayor mercado doméstico con una trayectoria de crecimiento sólida, así que es el país más atractivo para volumen y escala."
+3,M02,mercados,¿A qué segmento pertenece México?,True,,2,3781,2.2,"México pertenece al segmento **Maduros estancados**.
 
-Además, su **score** es **63.5** y su consumo doméstico en 2019 fue de **145.5 millones de kg**.
+**Insight de negocio:** es un mercado grande pero con crecimiento más limitado; suele ser más interesante para estrategias de eficiencia, valor agregado y fidelización que para expansión rápida."
+3,G01,grafico,Muéstrame un gráfico del consumo de Etiopía entre 1990 y 2019,True,,3,6678,3.8,"Aquí tienes el gráfico del **consumo doméstico de café en Etiopía entre 1990 y 2019**.
 
-**Insight de negocio:** es un mercado grande, pero con dinámica madura; suele requerir estrategias de valor, diferenciación y retención más que pura expansión de volumen."
-3,G01,grafico,Muéstrame un gráfico del consumo de Etiopía entre 1990 y 2019,True,,3,5612,3.2,"Aquí tienes el gráfico del consumo doméstico de café en **Etiopía** entre **1990 y 2019**.
+El consumo pasó de **72.0 millones de kg** en 1990 a **226.86 millones de kg** en 2019.
 
-**Insight de negocio:** la serie muestra una tendencia claramente ascendente y sostenida, lo que sugiere un mercado interno en expansión para café de consumo doméstico."
-3,G02,grafico,Haz un gráfico de barras con el consumo por región en 2019,True,,3,4998,3.1,"Aquí tienes el gráfico de barras con el **consumo doméstico de café por región en 2019**.
+**Insight de negocio:** Etiopía muestra una tendencia de crecimiento sostenido y fuerte del consumo interno, lo que puede ir reduciendo el excedente exportable si la producción no crece al mismo ritmo."
+3,G02,grafico,Haz un gráfico de barras con el consumo por región en 2019,True,,3,6065,3.3,"Aquí tienes el gráfico de barras con el **consumo doméstico de café por región en 2019**.
 
-**Insight:** Sudamérica concentra con diferencia el mayor consumo, con **1547.33 millones de kg**, muy por encima de Asia y Oceanía."
-3,X01,contexto,¿Por qué se interpretan los datos en kilogramos y no en tazas?,True,,2,3373,2.3,"Se interpretan en **kilogramos** porque esa es la unidad coherente con la estructura del dataset y con la validación de sus valores.
+**Insight de negocio:** Sudamérica concentra el mayor consumo regional, muy por encima del resto; eso sugiere un mercado doméstico especialmente relevante para estrategias de posicionamiento y distribución."
+3,X01,contexto,¿Por qué se interpretan los datos en kilogramos y no en tazas?,True,,2,4047,3.1,"Se interpretan en **kilogramos** porque esa es la unidad real del dataset: los valores son múltiplos exactos de 60, y por ejemplo **Brasil** registra **1.320 millones de kg** en 2019/20, equivalentes a **22 millones de sacos de 60 kg**, una cifra consistente con la Organización Internacional del Café.
 
-El contexto indica que:
+En cambio, **“tazas” no aparece como unidad de medición** en los datos y además convertir a tazas exigiría asumir cuántos gramos tiene cada taza, algo que no está definido en el dataset.
 
-- Los valores son **múltiplos exactos de 60**, lo que encaja con kilogramos y sacos.
-- Por ejemplo, **Brasil registra 1.320 millones en 2019/20**, equivalentes a **22 millones de sacos de 60 kg**, una cifra consistente con la Organización Internacional del Café.
-- Para pasarlos a **tazas** habría que asumir cuántos gramos de café hay por taza, y eso no viene en los datos.
+**Insight de negocio:** usar kg permite comparar países de forma consistente y enlazar el consumo doméstico con logística, inventarios y tamaño de mercado."
+3,X02,contexto,¿Cómo se calcula el score de oportunidad?,True,,2,4097,3.1,"El **score de oportunidad** va de **0 a 100** y se calcula combinando cuatro componentes, todos convertidos a **percentiles** para que los países más grandes no dominen el ranking:
 
-**Insight de negocio:** trabajar en kg permite comparar países de forma consistente y evitar sesgos por recetas o tamaños de taza, que varían mucho entre mercados."
-3,X02,contexto,¿Cómo se calcula el score de oportunidad?,True,,2,3388,2.5,"El **score de oportunidad** va de **0 a 100** y se calcula combinando **cuatro componentes** llevados a **percentiles** para que países muy grandes no dominen por volumen.
+- **35%**: tamaño del mercado
+- **35%**: crecimiento esperado 2019-2024
+- **15%**: estabilidad o baja volatilidad
+- **15%**: certidumbre del pronóstico o rango estrecho
 
-Los componentes y pesos son:
+La lógica es que un país puntúa mejor si combina **escala, crecimiento y menor riesgo**.
 
-- **Tamaño** del mercado: **35 %**
-- **Crecimiento esperado 2019–2024**: **35 %**
-- **Estabilidad / baja volatilidad**: **15 %**
-- **Certidumbre del pronóstico / rango estrecho**: **15 %**
+**Interpretación:**
+- **Score alto**: mercado atractivo para priorizar.
+- **Score bajo**: mercado pequeño, volátil o con menor crecimiento esperado.
 
-En resumen, el score favorece mercados que sean:
+**Insight de negocio:** la ventaja del score es que no premia solo el tamaño; ayuda a detectar países más interesantes aunque no sean los más grandes."
+3,P04,pronostico,¿Cuál es el rango del 80 % del precio del Arábica para 2024?,True,,2,3910,2.8,"El **rango del 80 %** del precio del **Arábica** para **2024** es de **27.74 a 247.18 centavos de dólar por libra**.
 
-1. grandes,
-2. con crecimiento esperado alto,
-3. relativamente estables,
-4. y con menor incertidumbre.
+Este rango proviene de los **pronósticos de precios** (investigación aparte basada en **FMI y Organización Internacional del Café**), no del dataset original.
 
-**Insight de negocio:** esta construcción está pensada para identificar mercados atractivos sin sobrepremiar solo a los más grandes, así que sirve mejor para priorizar expansión que para medir tamaño puro."
-3,F01,fuera_de_alcance,¿Cuál será el precio del café en 2025?,True,,2,3362,2.2,"No puedo decirte **el precio del café en 2025** con este dataset.
+**Insight de negocio:** el intervalo es muy amplio, así que para cobertura de riesgo conviene planear con escenarios conservadores y no con un solo precio puntual."
+3,F01,fuera_de_alcance,¿Qué rentabilidad tiene exportar café a Brasil?,True,,2,3810,2.9,"No puedo responder esa pregunta con estos datos.
 
-Este análisis **no contiene precios**; solo incluye **consumo doméstico de café** en países productores y sus **pronósticos de consumo**. Los rangos de pronóstico que tenemos son de **demanda**, no de precio.
+Este dataset cubre **consumo doméstico**, pronósticos de consumo y precios internacionales, pero **no incluye rentabilidad, costos logísticos, aranceles, márgenes ni datos de exportación por destino**. Para estimar la rentabilidad de exportar café a **Brasil** harían falta, como mínimo:
 
-Si quieres estimar precios para 2025, harían falta datos externos como:
-- precios internacionales del café,
-- cotizaciones de **Arábica** y **Robusta**,
-- o un índice como el de la **ICO** o del **Banco Mundial**.
+- precio de venta esperado en Brasil,
+- costo de producción,
+- flete y seguro,
+- aranceles e impuestos,
+- tipo de cambio y costo financiero.
 
-**Insight de negocio:** para decisiones comerciales conviene separar **precio** y **demanda**; este dataset sirve para anticipar consumo interno, no para valorar el mercado."
-3,F02,fuera_de_alcance,¿Cuánto café consume Estados Unidos?,True,,4,6511,4.9,"No puedo responder para **Estados Unidos** con este dataset, porque **solo incluye países productores** y no aparece ese país en la tabla de países.
+**Insight de negocio:** sí puedo ayudarte a estimar el **atractivo de Brasil como mercado de consumo doméstico** o comparar su **tendencia de demanda** con otros países productores."
+3,F02,fuera_de_alcance,¿Cuánto café consume Estados Unidos?,True,,4,8112,5.3,"No puedo responderlo con este dataset: **Estados Unidos no está incluido**, porque la base solo contiene **países productores** de café.
 
-Si quieres, puedo darte el consumo de café doméstico de un país productor concreto, por ejemplo **Brasil**, **Vietnam** o **Colombia**."
+Si quieres, puedo decirte **cuánto consume Brasil, Vietnam, Etiopía o Filipinas**, que sí están en el dataset."

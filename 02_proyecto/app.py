@@ -20,7 +20,7 @@ SUGERENCIAS = [
     "¿Cuánto consumirá Brasil en 2024 y con qué rango?",
     "Compara el crecimiento por región en la última década",
     "¿Por qué se eligió AutoETS para el pronóstico?",
-    "¿Cuál será el precio del café en 2025?",
+    "¿Qué rango de precio se espera para el Arábica en 2024?",
 ]
 
 
@@ -155,6 +155,16 @@ def pestana_panorama():
     fig.update_layout(yaxis=dict(categoryorder="total ascending"))
     col2.plotly_chart(fig, width="stretch")
 
+    try:
+        precios = consulta('SELECT year, arabica_usc_lb AS "Arábica", robusta_usc_lb AS "Robusta" FROM precios ORDER BY year')
+    except Exception:
+        return
+    fig = px.line(precios.melt(id_vars="year", var_name="tipo", value_name="centavos_lb"), x="year", y="centavos_lb", color="tipo",
+                  markers=True, title="Precio internacional del café, promedio anual",
+                  labels={"year": "Año", "centavos_lb": "Centavos de dólar por libra", "tipo": "Tipo"})
+    st.plotly_chart(fig, width="stretch")
+    st.caption("Investigación complementaria: precios internacionales del FMI y la OIC. No forman parte del dataset original. Sus rangos futuros están en la pestaña Pronósticos.")
+
 
 def pestana_pronosticos():
     paises = consulta("SELECT DISTINCT country FROM pronosticos WHERE country <> 'TOTAL' ORDER BY country")["country"].tolist()
@@ -202,6 +212,26 @@ def pestana_pronosticos():
     )
     st.caption("Backtest con tres cortes (2012, 2013 y 2014) pronosticando cinco años en cada uno.")
 
+    try:
+        rangos = consulta("SELECT * FROM pronostico_precios ORDER BY tipo, year")
+        precios = consulta("SELECT year, arabica_usc_lb, robusta_usc_lb FROM precios ORDER BY year")
+    except Exception:
+        return
+    st.subheader("Rangos de precios futuros")
+    tipo = st.radio("Tipo de café", ["Arábica", "Robusta"], horizontal=True)
+    r = rangos[rangos["tipo"] == tipo]
+    h = precios["arabica_usc_lb" if tipo == "Arábica" else "robusta_usc_lb"]
+    fig = go.Figure()
+    fig.add_scatter(x=r["year"], y=r["rango95_alto"], line=dict(width=0), showlegend=False, hoverinfo="skip")
+    fig.add_scatter(x=r["year"], y=r["rango95_bajo"], line=dict(width=0), fill="tonexty", fillcolor="rgba(199,125,26,0.12)", name="Rango 95 %")
+    fig.add_scatter(x=r["year"], y=r["rango80_alto"], line=dict(width=0), showlegend=False, hoverinfo="skip")
+    fig.add_scatter(x=r["year"], y=r["rango80_bajo"], line=dict(width=0), fill="tonexty", fillcolor="rgba(199,125,26,0.28)", name="Rango 80 %")
+    fig.add_scatter(x=precios["year"], y=h, mode="lines", name="Histórico", line=dict(color=estilo.TINTA))
+    fig.add_scatter(x=r["year"], y=r["precio_real_usc_lb"], mode="markers", name="Precio real", marker=dict(color=estilo.AZUL, size=9))
+    fig.update_layout(title=f"{tipo}: rangos de precio 2020–2024 y lo que pasó de verdad", xaxis_title="Año", yaxis_title="Centavos de dólar por libra")
+    st.plotly_chart(fig, width="stretch")
+    st.caption("Los precios y sus rangos son una investigación aparte (FMI y OIC). Ningún modelo superó al más simple, así que los rangos son amplios a propósito.")
+
 
 def pestana_mercados():
     mercados = consulta("SELECT * FROM mercados ORDER BY ranking")
@@ -237,7 +267,7 @@ def barra_lateral():
         st.subheader("Sobre estos datos")
         st.markdown(
             "Consumo doméstico de café en 55 países productores, de 1990 a 2019, en kilogramos. "
-            "Los pronósticos llegan a 2024 y no incluyen precios, porque el dataset no los tiene."
+            "Los pronósticos llegan a 2024. Los precios internacionales y sus rangos son una investigación aparte."
         )
         if st.button("Recalcular datos y modelos", width="stretch"):
             with st.spinner("Recalculando (1-2 minutos)"):

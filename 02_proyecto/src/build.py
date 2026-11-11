@@ -1,5 +1,6 @@
 import time
 import duckdb
+import pandas as pd
 from src import config, etl, models
 
 
@@ -24,6 +25,9 @@ def main():
     print(reporte)
     print("2/3 Backtest, pronóstico y segmentación (puede tardar 1-2 minutos)")
     tablas, silhouette = models.run(df_long)
+    if config.PRECIOS_FILE.exists():
+        reales = pd.read_csv(config.PRECIOS_REALES_FILE) if config.PRECIOS_REALES_FILE.exists() else None
+        tablas["pronostico_precios"] = models.pronosticar_precios(etl.load_precios(), reales)
     print("3/3 Guardando tablas en DuckDB")
     guardar_tablas(tablas)
     for tabla, filas in resumen_tablas().items():

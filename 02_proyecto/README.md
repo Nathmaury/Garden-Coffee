@@ -102,21 +102,22 @@ python -m eval.run_eval 3
 |---|---|---|---|---|
 | Análisis | 3 | 9 | 100 % | 3 |
 | Consultas | 4 | 12 | 100 % | 4 |
-| Contexto | 2 | 6 | 66,7 % | 0 |
+| Contexto | 2 | 6 | 100 % | 2 |
 | Fuera de alcance | 2 | 6 | 100 % | 2 |
 | Gráficos | 2 | 6 | 100 % | 2 |
 | Mercados | 2 | 6 | 100 % | 2 |
-| Pronósticos | 3 | 9 | 100 % | 3 |
-| **Total** | **18** | **54** | **96,3 %** | **16** |
+| Pronósticos | 4 | 12 | 91,7 % | 3 |
+| **Total** | **19** | **57** | **98,2 %** | **18** |
 
-En promedio cada respuesta toma 2,6 segundos y unos 3.700 tokens. El detalle de cada respuesta queda en `eval/resultados.csv`.
+En promedio cada respuesta toma 2,7 segundos y unos 4.400 tokens. El detalle de cada respuesta queda en `eval/resultados.csv`.
 
 Lo más útil de evaluar fue todo lo que encontré en el camino:
 
 - Al principio el agente calculaba mal el crecimiento anual porqu usaba 30 años entre 1990 y 2019 cuando son 29, le agregué una regla con un ejemplo al prompt y desde ahí acertó siempre.
 - Cuando le preguntaba por Estados Unidos respondía bien, pero daba muchas vueltas buscándolo (hasta 7 pasos). Le agregué una regla para que lo revise con una sola consulta.
 - En esa misma pregunta hubo un fallo que en realidad era del evaluador. El agente dijo "no tengo datos" y el script no reconocía esa frase, así que amplié la lista.
-- Las dos fallas que quedan son de contexto, las revisee y el agente sí explicó bien, solo que con otras palabras y el script busca palabras exactas. Para preguntas abiertas como esas lo ideal sería usar otro LLM que evalúe la respuesta.
+- Al sumar los rangos de precios, el agente confundía la tabla de pronóstico de consumo con la de precios, porque se llaman parecido, y respondía en kilos. Lo resolví dejando explícito en el prompt cuál es cuál, y agregué una pregunta de prueba que lo mide.
+- Solo quedó una falla en 57 respuestas, en una pregunta de pronóstico que acertó en las otras dos rondas.
 
 ## Qué hay en cada carpeta
 
@@ -153,7 +154,7 @@ Lo más útil de evaluar fue todo lo que encontré en el camino:
 ## Cosas a tener en cuenta
 
 - El enunciado habla de tazas, pero los datos están en kilogramos. Todos los valores son múltiplos de 60 y coinciden con los sacos de 60 kg que reporta la ICO.
-- No hay precios en el dataset, así que los rangos que calculo son de demanda y no de precio.
+- El dataset no tiene precios, así que investigué por aparte el precio internacional de cada año (FMI y Organización Internacional del Café) y calculé rangos de precio futuro con su propia historia. Son rangos amplios, porque el precio se comporta como una caminata aleatoria. Las fuentes están en `data/external/FUENTES.md`.
 - Los datos son solo de países productores y llegan hasta 2019. No están los grandes importadores ni lo que pasó después como la pandemia.
 - Algunos países tienen cifras que parecen estimadas, los deje fuera del pronóstico y quedan marcados en la base.
 - El tipo de café es el que predomina en cada país, no cuánto se consume de cada uno

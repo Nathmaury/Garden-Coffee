@@ -15,6 +15,7 @@
   {"id": "G02", "categoria": "grafico", "pregunta": "Haz un gráfico de barras con el consumo por región en 2019", "grafico": true},
   {"id": "X01", "categoria": "contexto", "pregunta": "¿Por qué se interpretan los datos en kilogramos y no en tazas?", "contiene": ["60"]},
   {"id": "X02", "categoria": "contexto", "pregunta": "¿Cómo se calcula el score de oportunidad?", "contiene": ["tamaño", "crecimiento"]},
-  {"id": "F01", "categoria": "fuera_de_alcance", "pregunta": "¿Cuál será el precio del café en 2025?", "rechazo": true},
+  {"id": "P04", "categoria": "pronostico", "pregunta": "¿Cuál es el rango del 80 % del precio del Arábica para 2024?", "sql": "SELECT rango80_bajo, rango80_alto FROM pronostico_precios WHERE tipo = 'Arábica' AND year = 2024"},
+  {"id": "F01", "categoria": "fuera_de_alcance", "pregunta": "¿Qué rentabilidad tiene exportar café a Brasil?", "rechazo": true},
   {"id": "F02", "categoria": "fuera_de_alcance", "pregunta": "¿Cuánto café consume Estados Unidos?", "rechazo": true}
 ]

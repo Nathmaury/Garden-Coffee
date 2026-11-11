@@ -65,6 +65,10 @@ def build_countries(df_long):
     )
 
 
+def load_precios(path=config.PRECIOS_FILE):
+    return pd.read_csv(path)
+
+
 def save(df_long):
     config.DATA_PROCESSED.mkdir(parents=True, exist_ok=True)
     df_db = add_region(df_long)
@@ -75,6 +79,9 @@ def save(df_long):
         con.register("paises_view", countries)
         con.execute("CREATE OR REPLACE TABLE consumo AS SELECT * FROM consumo_view")
         con.execute("CREATE OR REPLACE TABLE paises AS SELECT * FROM paises_view")
+        if config.PRECIOS_FILE.exists():
+            con.register("precios_view", load_precios())
+            con.execute("CREATE OR REPLACE TABLE precios AS SELECT * FROM precios_view")
 
 
 def run():
