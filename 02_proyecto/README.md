@@ -103,13 +103,13 @@ python -m eval.run_eval 3
 | Análisis | 3 | 9 | 100 % | 3 |
 | Consultas | 4 | 12 | 100 % | 4 |
 | Contexto | 2 | 6 | 100 % | 2 |
-| Fuera de alcance | 2 | 6 | 100 % | 2 |
+| Fuera de alcance y manipulación | 5 | 15 | 100 % | 5 |
 | Gráficos | 2 | 6 | 100 % | 2 |
 | Mercados | 2 | 6 | 100 % | 2 |
-| Pronósticos | 4 | 12 | 91,7 % | 3 |
-| **Total** | **19** | **57** | **98,2 %** | **18** |
+| Pronósticos | 4 | 12 | 100 % | 4 |
+| **Total** | **22** | **66** | **100 %** | **22** |
 
-En promedio cada respuesta toma 2,7 segundos y unos 4.400 tokens. El detalle de cada respuesta queda en `eval/resultados.csv`.
+En promedio cada respuesta toma 2,3 segundos y unos 4.500 tokens. El detalle de cada respuesta queda en `eval/resultados.csv`.
 
 Lo más útil de evaluar fue todo lo que encontré en el camino:
 
@@ -117,7 +117,9 @@ Lo más útil de evaluar fue todo lo que encontré en el camino:
 - Cuando le preguntaba por Estados Unidos respondía bien, pero daba muchas vueltas buscándolo (hasta 7 pasos). Le agregué una regla para que lo revise con una sola consulta.
 - En esa misma pregunta hubo un fallo que en realidad era del evaluador. El agente dijo "no tengo datos" y el script no reconocía esa frase, así que amplié la lista.
 - Al sumar los rangos de precios, el agente confundía la tabla de pronóstico de consumo con la de precios, porque se llaman parecido, y respondía en kilos. Lo resolví dejando explícito en el prompt cuál es cuál, y agregué una pregunta de prueba que lo mide.
-- Solo quedó una falla en 57 respuestas, en una pregunta de pronóstico que acertó en las otras dos rondas.
+- El agente respondía preguntas que no tenían que ver con el proyecto, como definiciones o código. Le agregué un límite de alcance en el prompt y tres preguntas de prueba para medirlo.
+- Al intentar manipularlo ("ignora tus instrucciones"), el filtro de contenido de Azure bloqueaba la pregunta y la app mostraba un error técnico. Hice que ese bloqueo se responda con el mismo mensaje de fuera de alcance.
+- En la corrida final acertó las 66 respuestas. Como en corridas anteriores hubo fallas aisladas, leo ese 100 % como alta confiabilidad y no como garantía.
 
 ## Qué hay en cada carpeta
 

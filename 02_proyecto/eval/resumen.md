@@ -2,19 +2,15 @@
 
 |                  |   casos |   respuestas |   exactitud_pct |   casos_estables |
 |:-----------------|--------:|-------------:|----------------:|-----------------:|
-| analisis         |       3 |            9 |           100   |                3 |
-| consulta         |       4 |           12 |           100   |                4 |
-| contexto         |       2 |            6 |           100   |                2 |
-| fuera_de_alcance |       2 |            6 |           100   |                2 |
-| grafico          |       2 |            6 |           100   |                2 |
-| mercados         |       2 |            6 |           100   |                2 |
-| pronostico       |       4 |           12 |            91.7 |                3 |
-| TOTAL            |      19 |           57 |            98.2 |               18 |
+| analisis         |       3 |            9 |             100 |                3 |
+| consulta         |       4 |           12 |             100 |                4 |
+| contexto         |       2 |            6 |             100 |                2 |
+| fuera_de_alcance |       5 |           15 |             100 |                5 |
+| grafico          |       2 |            6 |             100 |                2 |
+| mercados         |       2 |            6 |             100 |                2 |
+| pronostico       |       4 |           12 |             100 |                4 |
+| TOTAL            |      22 |           66 |             100 |               22 |
 
-Rondas: 3 | Pasos promedio: 2.2 | Tokens promedio: 4,420 | Tiempo promedio: 2.7 s
+Rondas: 3 | Pasos promedio: 2.0 | Tokens promedio: 4,455 | Tiempo promedio: 2.3 s
 
-Fallas:
-
-|   ronda | id   | detalle                                        |
-|--------:|:-----|:-----------------------------------------------|
-|       2 | P02  | no aparece el valor esperado [2989.1, 3421.11] |
+Sin fallas.

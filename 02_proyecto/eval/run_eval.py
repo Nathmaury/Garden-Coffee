@@ -12,7 +12,7 @@ from src.agent.tools import ejecutar_sql
 
 CARPETA = Path(__file__).parent
 TOLERANCIA = 0.03
-FRASES_RECHAZO = ["no contiene", "no tiene", "no tengo", "no hay", "no incluye", "no dispon", "no es posible", "no puedo", "no se puede", "no cuento", "fuera del alcance", "no aparece", "no esta", "no figura", "no forma parte", "no se encuentra", "solo incluye", "unicamente"]
+FRASES_RECHAZO = ["no contiene", "no tiene", "no tengo", "no hay", "no incluye", "no dispon", "no es posible", "no puedo", "no se puede", "no cuento", "fuera del alcance", "fuera de", "no aparece", "no esta", "no figura", "no forma parte", "no se encuentra", "solo incluye", "unicamente", "solo puedo", "solo respondo"]
 
 
 def normalizar(texto):
